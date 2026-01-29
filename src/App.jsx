@@ -1,4 +1,14 @@
-import { useState, useEffect } from 'react'
+// importo tutti i componenti di gestione delle rotte
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// importo pages da usare nelle rotte
+import Homepage from "./pages/Homepage";
+import ChiSiamo from "./pages/ChiSiamo";
+import Prodotti from "./pages/Prodotti";
+
+// import layout
+import DefaultLayout from "./layouts/DefaultLayout";
+
 import './App.css'
 
 function App() {
@@ -6,7 +16,15 @@ function App() {
 
   return (
     <>
-
+      <BrowserRouter>
+        <Routes>
+          <Route element={<DefaultLayout />}>
+            <Route index element={<Homepage />} />
+            <Route path="/chisiamo" element={<ChiSiamo />} />
+            <Route path="/prodotti" element={<Prodotti />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
