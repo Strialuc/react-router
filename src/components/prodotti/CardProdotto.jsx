@@ -9,17 +9,15 @@ function CardProdotto({ prodotto }) {
                     style={{ height: "200px", objectFit: "contain" }} />
             </div>
             <div className="info-prodotto">
-                <p className="categoria-prodotto">{category}</p>
+                <p className="categoria-prodotto pt-4">{category}</p>
                 <h3 className="nome-prodotto">{title}</h3>
                 <div className="rating-container">
                     <span className="punteggio-prodotto">{rating.rate} punteggio - </span>
                     <span className="recensioni-prodotto">{rating.count} recensioni</span>
                 </div>
-                {/* per fare in modo che la descrizione non superi i 100 caratteri */}
                 <p className="descrizione-prodotto">{description}</p>
                 <div className="footer-part">
-                    {/* per avere due cifre dopo la virgola */}
-                    <p className="prezzo-prodotto">€{Number(price).toFixed(2)}</p>
+                    <p className="prezzo-prodotto">€{price}</p>
                     <button className="btn-aggiungi">Aggiungi al carrello</button>
                 </div>
             </div>
