@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import ChiSiamo from "./pages/ChiSiamo";
 import Prodotti from "./pages/Prodotti";
+import DettagliProdotto from "./pages/DettagliProdotto"
 
 // import layout
 import DefaultLayout from "./layouts/DefaultLayout";
@@ -21,7 +22,10 @@ function App() {
           <Route element={<DefaultLayout />}>
             <Route index element={<Homepage />} />
             <Route path="/chisiamo" element={<ChiSiamo />} />
-            <Route path="/prodotti" element={<Prodotti />} />
+            <Route path="/prodotti">
+              <Route index element={<Prodotti />} />
+              <Route path=":id" element={<DettagliProdotto />} />
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>

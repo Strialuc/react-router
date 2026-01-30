@@ -1,6 +1,9 @@
+import { Link } from "react-router-dom";
+
+
 function CardProdotto({ prodotto }) {
 
-    const { title, price, description, category, image, rating } = prodotto;
+    const { title, price, description, category, image, rating, id } = prodotto;
 
     return (
         <div className="prodotto">
@@ -18,8 +21,8 @@ function CardProdotto({ prodotto }) {
                 <p className="descrizione-prodotto">{description}</p>
                 <div className="footer-part">
                     <p className="prezzo-prodotto">€{price}</p>
-                    <button className="btn-aggiungi">Aggiungi al carrello</button>
                 </div>
+                <Link to={`/prodotti/${id}`}> Clicca qui per il dettaglio dei prodotti</Link>
             </div>
         </div>
     )
